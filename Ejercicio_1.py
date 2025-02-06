@@ -15,7 +15,27 @@ for i in range(3):
 print(f"La probabilidad de que la dona sea de limón y en forma de toro es: {p_l_y_t:.4f}")
 
 # Mostrar el cálculo paso a paso    
-print("\nCálculo paso a paso:")
+print("\nCálculo paso a paso (inciso a):")
 for i in range(3):
     prob_urna = pu[i] * pl_u[i] * pt_lyu[i]
     print(f"Urna {i}: P(U={i}) * P(L|U={i}) * P(T|L,U={i}) = {pu[i]:.4f} * {pl_u[i]:.4f} * {pt_lyu[i]:.4f} = {prob_urna:.4f}")
+
+# b) Calcular P(U=2 | L ∩ T) usando el teorema de Bayes
+# P(U=2 | L ∩ T) = [P(U=2) * P(L|U=2) * P(T|L,U=2)] / P(L ∩ T)
+
+# Numerador: P(U=2) * P(L|U=2) * P(T|L,U=2)
+numerador = pu[2] * pl_u[2] * pt_lyu[2]
+
+# Denominador: P(L ∩ T) ya calculado en el inciso a)
+denominador = p_l_y_t
+
+# Calcular la probabilidad usando la fórmula de Bayes
+p_u2_dado_l_y_t = numerador / denominador
+
+print(f"\nLa probabilidad de que la dona provenga de la urna 2 dado que es de limón y en forma de toro es: {p_u2_dado_l_y_t:.4f}")
+
+# Mostrar el cálculo paso a paso
+print("\nCálculo paso a paso (inciso b):")
+print(f"Numerador = P(U=2) * P(L|U=2) * P(T|L,U=2) = {pu[2]:.4f} * {pl_u[2]:.4f} * {pt_lyu[2]:.4f} = {numerador:.4f}")
+print(f"Denominador = P(L ∩ T) = {denominador:.4f}")
+print(f"P(U=2 | L ∩ T) = {numerador:.4f} / {denominador:.4f} = {p_u2_dado_l_y_t:.4f}")
