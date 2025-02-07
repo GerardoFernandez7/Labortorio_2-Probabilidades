@@ -19,6 +19,16 @@ df['Total'] = df[['Red', 'Green', 'Blue', 'Orange', 'Yellow', 'Brown']].sum(axis
 # Filtrar las muestras que cumplen con el evento T (al menos 57 botonetas en total)
 muestras_T = len(df[df['Total'] >= 57])
 
+# c) Calcular P(W): La probabilidad de agarrar una bolsa que pese por lo menos 50 g
+# Contar cuántos valores cumplen la condición
+cantidad_cumplec = (df["Weight"] >= 50).sum()
+
+# Calcular la probabilidad en porcentaje
+probabilidadc = cantidad_cumplec / 30
+resultadoc = probabilidadc * 100
+
+# Imprimir el resultado correctamente usando f-string
+print(f"La probabilidad de elegir aleatoriamente y que la bolsa pese más de 50 es {resultadoc:.2f}%")
 # Calcular la probabilidad
 P_R = muestras_R / total_muestras
 
