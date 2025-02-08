@@ -40,21 +40,20 @@ p_u2_dado_l_y_t = numerador / denominador
 
 print(f"\nLa probabilidad de que la dona provenga de la urna 2 dado que es de limón y en forma de toro es: {p_u2_dado_l_y_t:.4f}")
 
-# c) Calcular P(U=1 | L ∩ T) 
-#Sabiendo que la probabilidad de agarrar cualquier urna es 1/3
-#La probabilidad de agarrar una donda de limon dada cualquier urna esta dada por 1/2, 2/5, 1/3 respectivo al numero de la urna
-#Y sabiendo que la probabilidad que tenga forma de toro dado a que es de limon es 2/3, 1/2, 2/5 respectivo al numero de la urna
-
-probabilidadc = 1/3*2/5*1/2
-resultadoc = probabilidadc * 100
-print(f"La probabilidad de elegir aleatoriamente y que me salga una dona de limon con forma de toro en la Urna 1 es {resultadoc:.2f}%")
-
-
 # Mostrar el cálculo paso a paso
 print("\nCálculo paso a paso (inciso b):")
 print(f"Numerador = P(U=2) * P(L|U=2) * P(T|L,U=2) = {pu[2]:.4f} * {pl_u[2]:.4f} * {pt_lyu[2]:.4f} = {numerador:.4f}")
 print(f"Denominador = P(L ∩ T) = {denominador:.4f}")
 print(f"P(U=2 | L ∩ T) = {numerador:.4f} / {denominador:.4f} = {p_u2_dado_l_y_t:.4f}")
+
+# c) Calcular P(U=1 | L ∩ T) 
+#Sabiendo que la probabilidad de agarrar cualquier urna es 1/3
+#La probabilidad de agarrar una donda de limon dada cualquier urna esta dada por 1/2, 2/5, 1/3 respectivo al numero de la urna
+#Y sabiendo que la probabilidad que tenga forma de toro dado a que es de limon es 2/3, 1/2, 2/5 respectivo al numero de la urna
+
+numeradorc = pu[1] * pl_u[1] * pt_lyu[1]
+resultadoc = numeradorc / p_l_y_t
+print(f"La probabilidad de elegir aleatoriamente y que me salga una dona de limon con forma de toro en la Urna 1 es {resultadoc:.2f}%")
 
 
 # d) Calcular probabilidad de que la dona sea de la urna 0 dado que es de limón y con forma de toro
