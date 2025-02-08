@@ -55,3 +55,18 @@ print("\nCálculo paso a paso (inciso b):")
 print(f"Numerador = P(U=2) * P(L|U=2) * P(T|L,U=2) = {pu[2]:.4f} * {pl_u[2]:.4f} * {pt_lyu[2]:.4f} = {numerador:.4f}")
 print(f"Denominador = P(L ∩ T) = {denominador:.4f}")
 print(f"P(U=2 | L ∩ T) = {numerador:.4f} / {denominador:.4f} = {p_u2_dado_l_y_t:.4f}")
+
+
+# d) Calcular probabilidad de que la dona sea de la urna 0 dado que es de limón y con forma de toro
+# Numerador: P(U=0) * P(L|U=0) * P(T|L,U=0)
+numerador = pu[0] * pl_u[0] * pt_lyu[0]
+
+# Denominador: P(L ∩ T) ya calculado en el inciso a)
+denominador = p_l_y_t
+
+# Calcular la probabilidad usando la fórmula de Bayes
+p_u0_dado_l_y_t = numerador / denominador
+
+print(f"\nLa probabilidad de que la dona provenga de la urna 0 dado que es de limón y en forma de toro es: {p_u0_dado_l_y_t:.4f}")
+print("procedimiento similar al de los incisos anteriores")
+
