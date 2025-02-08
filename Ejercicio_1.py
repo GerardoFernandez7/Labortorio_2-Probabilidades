@@ -1,5 +1,11 @@
 # Teoria de Probabiliades - Laboratorio 2
-# Autor: Gerardo Andre Fernandez Cruz - 23763
+# Autores: 
+# - Diego Patzán - 23525
+# - Gerardo André Fernández Cruz - 23763
+# - Anthony Lou Schwank - 23410
+# - Ihan Marroquin - 23108
+# - Milton Polanco - 23471
+# - Roberto Nájera - 23781
 # Fecha: 3/2/2025
 
 # Probabilidades dadas
