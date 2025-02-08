@@ -29,6 +29,9 @@ muestras_T = len(df[df['Total'] >= 57])
 # Contar cuántos valores cumplen la condición
 cantidad_cumplec = (df["Weight"] >= 50).sum()
 
+# d) Calcular P(R y T): probabilidad de que hay al menos 10 botonetas rojas y hay al menos 57 botonetas en total
+P_RT = len(df[df["Total"] >= 57][df["Red"] >= 10])
+
 # e) Calcular P(T \ W): la bolsa tiene al menos 57 y pesa menos de 50 gramos
 P_TW = len(df[df['Total'] >= 57 ][df["Weight"] < 50])
 
@@ -43,6 +46,8 @@ P_R = muestras_R / total_muestras
 
 P_T = muestras_T / total_muestras
 
+P_RT *= 100 / total_muestras
+
 P_TW *= 100 / total_muestras 
 
 
@@ -50,5 +55,6 @@ print(f"Probabilidad P(R) de tener al menos 10 botonetas rojas: {P_R:.4f}")
 
 print(f"Probabilidad P(T) de tener al menos 57 botonetas en total: {P_T:.4f}")
 
+print(f"Probabilidad P(R y T) de tener al menos 57 botonetas en total y al menos 10 rojas: {P_RT:.4f} %")
 
 print(f"Probabilidad P(T\W) de tener al menos 57 botonetas en total y que pese menos de 50 gramos: {P_TW:.4f} %")
